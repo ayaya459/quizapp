@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header/>
+    <Header />
     <b-container class="bv-example-row">
       <b-row>
         <b-col sm="6" offset="3">
@@ -29,13 +29,13 @@ export default {
   data() {
     return {
       questions: [],
-      index: 0
+      index: 1
     };
   },
 
   methods: {
-    next(){
-      this.index ++ 
+    next() {
+      this.index++;
     }
   },
 
@@ -43,14 +43,13 @@ export default {
     fetch("https://opentdb.com/api.php?amount=10&category=17&type=multiple", {
       method: "get"
     })
-      .then((response) => {
+      .then(response => {
         return response.json();
       })
       .then(jsonData => {
         this.questions = jsonData.results;
       });
   }
-
 };
 </script>
 
