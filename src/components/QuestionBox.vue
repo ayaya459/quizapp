@@ -1,6 +1,9 @@
 <template>
   <div class="question-box-container">
     <b-jumbotron header="" lead="Bootstrap v4 Components for Vue.js 2">
+      
+      
+
       <template v-slot:lead>
         {{ currentQuestion.question }}
       </template>
@@ -14,7 +17,7 @@
         @click="selectAnswer(index)"
         :class="[ selectedIndex === index ? 'selected':'' ]"
         >
-        {{ asnwers }}
+        {{ answers[index] }}
         </b-list-group-item>
       </b-list-group>
 
@@ -26,6 +29,7 @@
 
 <script>
 import _ from 'lodash'
+
 export default {
   props: {
     currentQuestion: Object,
